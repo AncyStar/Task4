@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+</head>
+<body class="bg-blue-100 p-6">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-center text-gray-800 font-bold mb-4">Income Expense Calculator</h1>
+        <div class="flex bg-white border rounded-lg shadow-lg p-6">
+            <div class="flex-1">
+                <div class="flex gap-4 py-2">
+                    <label class="block text-sm font-medium text-gray-800 mt-2">Description: </label>
+                    <input type="text" id="description" placeholder="Enter description" class="w-full border border-gray-100 rounded 
+                    px-2 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex gap-4 py-2">
+                    <label class="block text-sm font-medium text-gray-800 mt-2">Amount: </label>
+                    <input type="number" id="amount" placeholder="Enter amount" class="w-full border border-gray-100 rounded 
+                    px-2 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex gap-2 mb-4">
+                    <label class="flex items-center gap-2 text-sm text-gray-800">
+                        <input type="radio" name="type" value="income" id="income" checked>
+                        <span>Income</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-sm text-gray-800">
+                        <input type="radio" name="type" value="expense" id="expense">
+                        <span>Expense</span>
+                    </label>
+                </div>
+                <button type="button" id="submit-btn" onclick="addEntry()" class="bg-blue-400 mx-64 px-3 py-2 rounded-lg text-white font-bold shadow-lg hover:bg-blue-800">Add</button>
+            </div>
+        </div>
+
+        <div class="bg-white flex w-full gap-2 mt-2 shadow-lg rounded-md p-4 text-center gap-4 mb-6">
+            <h1 class="font-bold">Display Items</h1>
+            <label class="flex items-center gap-2 text-sm text-gray-800">
+                <input type="radio" name="filter" value="all" checked onchange="applyFilter()">
+                <span>All</span>
+            </label>
+            <label class="flex items-center gap-2 text-sm text-gray-800">
+                <input type="radio" name="filter" value="income" onchange="applyFilter()">
+                <span>Income</span>
+            </label>
+            <label class="flex items-center gap-2 text-sm text-gray-800">
+                <input type="radio" name="filter" value="expense" onchange="applyFilter()">
+                <span>Expense</span>
+            </label>
+        </div>
+
+        <div id="entry-list" class="mt-8 space-y-4"></div>
+
+        <div class="bg-white w-full p-4 flex rounded-lg shadow-lg justify-between mt-8 text-sm font-medium text-gray-800">
+            <div class="font-bold">
+                Total Income: ₹.<span id="total-income">0</span>
+            </div>
+            <div class="font-bold">
+                Total Expense: ₹.<span id="total-expense">0</span>
+            </div>
+            <div class="font-bold">
+                Balance: ₹.<span id="net-balance">0</span>
+            </div>
+        </div>
+    </div>
+
+<script src="./task4.js">
+   
+</script>
+</body>
+</html>
